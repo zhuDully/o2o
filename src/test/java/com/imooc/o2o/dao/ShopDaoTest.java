@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,6 +18,8 @@ public class ShopDaoTest extends BaseTest{
 
     @Autowired
     private ShopDao shopDao;
+    
+    @Ignore//@Ignore标签，JUnit则不会触发testInsertShop方法了。
     @Test
     public void testInsertShop() {
         Shop shop = new Shop();
@@ -40,6 +43,16 @@ public class ShopDaoTest extends BaseTest{
         shop.setAdvice("审核中");
         int effectedNum = shopDao.insertShop(shop);
         assertEquals(1, effectedNum);
-
     }
+    
+    @Test
+    public void testUpdateShop() {
+        Shop shop = new Shop();
+        shop.setShopId(3L);
+        shop.setShopDesc("测试描述");
+        shop.setShopAddr("测试地址");
+        int effectedNum = shopDao.updateShop(shop);
+        assertEquals(1, effectedNum);   
+    }
+    
 }
