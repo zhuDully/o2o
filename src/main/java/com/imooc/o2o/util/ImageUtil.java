@@ -76,8 +76,8 @@ public class ImageUtil {
 	public static void main(String[] args) throws IOException {
 		String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 		Thumbnails.of(new File("C:/myDevelopmentData/testImg/01.jpg")).size(200, 200)
-				.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/waterMark.jpg")), 0.25f)
-				.outputQuality(0.8f).toFile("C:/myDevelopmentData/testImg/01new.jpg");
+				.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.png")), 0.25f)
+				.outputQuality(0.8f).toFile("C:/myDevelopmentData/66testImg/01new.jpg");
 	}
 	
 	

@@ -22,7 +22,8 @@ public class PathUtil {
 
     //根据不同的业务需求返回不同的子路径
     public static String getShopImagePath(long shopId) {
-        String imagePath = "/upkoad/item/shop/"+ shopId + "/";
+        String imagePath = "upkoad/item/shop/"+ shopId + "/";//linux或者macOS需要去掉upload前的“/”
+        //String imagePath = "/upkoad/item/shop/"+ shopId + "/";win10，可去掉也也可以不去掉
         return imagePath.replace("/", seperator);
     }
 }
